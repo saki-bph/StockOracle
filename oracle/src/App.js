@@ -3,11 +3,11 @@ import Web3 from "web3";
 import { STOCK_ORACLE_ABI, STOCK_ORACLE_ADDRESS } from "./quotecontract";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Form from "react-bootstrap/Form";
 import Grid from '@material-ui/core/Grid';
+import Button from "@material-ui/core/Button";
+import Typography from '@material-ui/core/Typography';
 
 
 const web3 = new Web3("http://localhost:8545");
@@ -74,20 +74,19 @@ function App() {
   const Data = (
     <div className="output-data">
       <p>
-        <Typography variant='h6'>
+        <Typography variant='h4'>
           {`Price: ${price}`}
         </Typography>
       </p>
       <box m={1} />
       <p>
-        <Typography variant='h6'>
+        <Typography variant='h4'>
           {`Volume: ${volume}`}
         </Typography>
       </p>
     </div>
   )
   
-
   return (
     <div className="App">
       <Form>

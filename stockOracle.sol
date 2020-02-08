@@ -11,24 +11,17 @@ contract oracle {
 
     }
 
-    
-
     mapping( bytes4 => stock) stockQuote;
-
-    
-
     address oracleOwner;
-
 
     constructor() public {
         oracleOwner = msg.sender;
     }
     
-
     function setStock(bytes4 symbol, uint price, uint volume) public returns (uint) {
         require(oracleOwner == msg.sender);
-        stock memory stock1 = stock(price,volume);
-        stockQuote[symbol] = stock1;
+        stock memory _stock = stock(price,volume);
+        stockQuote[symbol] = _stock;
     }
 
     function getStockPrice(bytes4 symbol) public view returns (uint) {
